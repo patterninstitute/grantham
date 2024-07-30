@@ -40,8 +40,9 @@ Imports:
     tidyr,
     rlang,
     stringr
-URL: https://maialab.org/grantham/, https://github.com/maialab/grantham
-BugReports: https://github.com/maialab/grantham/issues
+URL: https://www.pattern.institute/grantham/, https://github.com/patterninstitute/grantham
+BugReports: https://github.com/patterninstitute/grantham/issues
 Suggests: 
     spelling
 Language: en-US
+Config/Needs/website: patterninstitute/chic

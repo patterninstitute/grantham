@@ -11,9 +11,9 @@ A minimal set of routines to calculate the Grantham distance \doi{10.1126/scienc
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://maialab.org/grantham/}
-  \item \url{https://github.com/maialab/grantham}
-  \item Report bugs at \url{https://github.com/maialab/grantham/issues}
+  \item \url{https://www.pattern.institute/grantham/}
+  \item \url{https://github.com/patterninstitute/grantham}
+  \item Report bugs at \url{https://github.com/patterninstitute/grantham/issues}
 }
 
 }
