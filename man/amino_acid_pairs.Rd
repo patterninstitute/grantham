@@ -41,5 +41,6 @@ amino_acid_pairs()
 amino_acid_pairs(keep_self = FALSE)
 
 # Generate specific combinations of Ser against Ala and Trp.
-amino_acid_pairs(x = 'Ser', y = c('Ala', 'Trp'))
+amino_acid_pairs(x = "Ser", y = c("Ala", "Trp"))
+
 }

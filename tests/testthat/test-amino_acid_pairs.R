@@ -10,7 +10,6 @@ test_that("amino_acid_pairs() validates amino acids (three letter codes)", {
 })
 
 test_that("amino_acid_pairs() removes self-self amino acid combinations", {
-
   with_self <- amino_acid_pairs(x = "Arg", y = c("Arg", "Leu"))
   without_self <- amino_acid_pairs(x = "Arg", y = c("Arg", "Leu"), keep_self = FALSE)
 
@@ -22,7 +21,6 @@ test_that("amino_acid_pairs() removes self-self amino acid combinations", {
 })
 
 test_that("amino_acid_pairs() removes duplicate amino acid combinations", {
-
   with_duplicates <- amino_acid_pairs(x = c("Arg", "Arg"), y = c("Arg", "Leu"))
   without_duplicates <- amino_acid_pairs(x = c("Arg", "Arg"), y = c("Arg", "Leu"), keep_duplicates = FALSE)
 
@@ -34,7 +32,6 @@ test_that("amino_acid_pairs() removes duplicate amino acid combinations", {
 })
 
 test_that("amino_acid_pairs() removes reversed amino acid combinations", {
-
   with_reverses <- amino_acid_pairs(x = c("Arg", "Leu"), y = c("Leu", "Arg"))
   without_reverses <- amino_acid_pairs(x = c("Arg", "Leu"), y = c("Leu", "Arg"), keep_reverses = FALSE)
 

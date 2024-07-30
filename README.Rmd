@@ -43,13 +43,13 @@ Grantham distance between two amino acids:
 ```{r}
 library(grantham)
 
-grantham_distance(x = 'Ser', y = 'Phe')
+grantham_distance(x = "Ser", y = "Phe")
 ```
 
 The function `grantham_distance()` is vectorised with amino acids being matched element-wise to form pairs for comparison:
 
 ```{r}
-grantham_distance(x = c('Ser', 'Arg'), y = c('Phe', 'Leu'))
+grantham_distance(x = c("Ser", "Arg"), y = c("Phe", "Leu"))
 ```
 
 The two vectors of amino acids must have compatible sizes in the sense of
@@ -59,7 +59,7 @@ one of them is of length one, and it is recycled up to the length of the other.
 
 ```{r}
 # `'Ser'` is recycled to match the length of the second vector, i.e. 3.
-grantham_distance(x = 'Ser', y = c('Phe', 'Leu', 'Arg'))
+grantham_distance(x = "Ser", y = c("Phe", "Leu", "Arg"))
 ```
 
 Use the function `amino_acid_pairs()` to generate all 20 x 20 amino acid pairs:

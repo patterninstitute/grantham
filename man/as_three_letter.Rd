@@ -22,19 +22,19 @@ to Asx, and Z (Glutamine or Glutamic acid) converted to Glx.
 }
 \examples{
 # Convert S to Ser, R to Arg and P to Pro.
-as_three_letter(c('S', 'R', 'P'))
+as_three_letter(c("S", "R", "P"))
 
 # The function `as_three_letter()` is case insensitive on the input but will
 # always return the three-letter codes with the first letter in uppercase.
-as_three_letter(c('S', 's', 'p', 'P'))
+as_three_letter(c("S", "s", "p", "P"))
 
 # Convert also special case codes B (Asparagine or Aspartic acid) and Z
 # (Glutamine or Glutamic acid)
-as_three_letter(c('B', 'Z'))
+as_three_letter(c("B", "Z"))
 
 # Invalid codes in the input are converted to NA.
 # "S" is correctly mapped to "Ser" but "Ser" and "Serine" are not
 # one-letter amino acid codes and are therefore converted to NA.
-as_three_letter(c('S', 's', 'Ser', 'Serine'))
+as_three_letter(c("S", "s", "Ser", "Serine"))
 
 }

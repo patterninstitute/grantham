@@ -34,7 +34,7 @@ Grantham distance between two amino acids:
 ``` r
 library(grantham)
 
-grantham_distance(x = 'Ser', y = 'Phe')
+grantham_distance(x = "Ser", y = "Phe")
 #> # A tibble: 1 × 3
 #>   x     y         d
 #>   <chr> <chr> <dbl>
@@ -45,7 +45,7 @@ The function `grantham_distance()` is vectorised with amino acids being
 matched element-wise to form pairs for comparison:
 
 ``` r
-grantham_distance(x = c('Ser', 'Arg'), y = c('Phe', 'Leu'))
+grantham_distance(x = c("Ser", "Arg"), y = c("Phe", "Leu"))
 #> # A tibble: 2 × 3
 #>   x     y         d
 #>   <chr> <chr> <dbl>
@@ -61,7 +61,7 @@ to the length of the other.
 
 ``` r
 # `'Ser'` is recycled to match the length of the second vector, i.e. 3.
-grantham_distance(x = 'Ser', y = c('Phe', 'Leu', 'Arg'))
+grantham_distance(x = "Ser", y = c("Phe", "Leu", "Arg"))
 #> # A tibble: 3 × 3
 #>   x     y         d
 #>   <chr> <chr> <dbl>

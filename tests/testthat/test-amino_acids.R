@@ -24,5 +24,4 @@ test_that("amino_acids() returns 20 amino acids", {
     )
 
   expect_identical(amino_acids(), the_twenty)
-
 })

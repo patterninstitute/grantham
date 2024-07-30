@@ -6,7 +6,6 @@
 #' @param n Dimension of a `n` by `n` square matrix.
 #'
 #' @return An integer vector of linear positions in column-major order.
-#' @md
 #'
 #' @examples
 #' sltm_k(3)
@@ -14,7 +13,9 @@
 #' @noRd
 #' @keywords internal
 sltm_k <- function(n) {
-  if(!(n > 1)) stop('`n` must be greater than 1')
+  if (!(n > 1)) stop("`n` must be greater than 1")
 
-  utils::combn(seq_len(n), 2, function(ij) {ij2k(i = ij[2], j = ij[1], n)})
+  utils::combn(seq_len(n), 2, function(ij) {
+    ij2k(i = ij[2], j = ij[1], n)
+  })
 }

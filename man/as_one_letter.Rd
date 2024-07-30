@@ -22,11 +22,11 @@ to B, and Glx (Glutamine or Glutamic acid) converted to Z.
 }
 \examples{
 # Convert Ser to S, Arg to R and Pro to P.
-as_one_letter(c('Ser', 'Arg', 'Pro'))
+as_one_letter(c("Ser", "Arg", "Pro"))
 
 # The function `as_one_letter()` is case insensitive on the input but will
 # always return the one-letter codes in uppercase.
-as_one_letter(c('ser', 'ArG', 'PRO'))
+as_one_letter(c("ser", "ArG", "PRO"))
 
 # Convert the codes of the 20 standard amino acids. Note that the function
 # `amino_acids()` returns the three-letter codes of the 20 standard amino
@@ -35,11 +35,11 @@ as_one_letter(amino_acids())
 
 # Convert also special case codes Asx (Asparagine or Aspartic acid) and Glx
 # (Glutamine or Glutamic acid)
-as_one_letter(c('Asx', 'Glx'))
+as_one_letter(c("Asx", "Glx"))
 
 # Invalid codes in the input are converted to NA.
 # "Ser" is correctly mapped to "S" but "Serine" is not as it is not a
 # three-letter amino acid code (the same applies to "Glucose").
-as_one_letter(c('Ser', 'Serine', 'Glucose'))
+as_one_letter(c("Ser", "Serine", "Glucose"))
 
 }

@@ -54,7 +54,7 @@ amino acid properties (composition, polarity and molecular volume). No
 rounding to nearest integer is performed.
 }
 \examples{
-grantham_distance_exact(c('Ser', 'Ser'), c('Pro', 'Trp'))
+grantham_distance_exact(c("Ser", "Ser"), c("Pro", "Trp"))
 
 }
 \seealso{

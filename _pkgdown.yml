@@ -1,7 +1,6 @@
 url: https://www.pattern.institute/grantham
 
 template:
-  package: chic
   bootstrap: 5
 
 authors:
@@ -13,7 +12,7 @@ authors:
     href: https://www.linkedin.com/in/ana-teresa-maia-2a1a866/
   CINTESIS:
     href: "https://cintesis.eu/"
-    html: "<img src='https://www.pattern.institute/grantham/reference/figures/cintesis.svg' height=24>"
+    html: "<img src='https://www.pattern.institute/grantham/reference/figures/cintesis.svg' alt='CINTESIS logo' height=24>"
   Pattern Institute:
     href: https://www.pattern.institute
-    html: <img src='https://www.pattern.institute/grantham/reference/figures/pi.svg' height=24>
+    html: <img src='https://www.pattern.institute/grantham/reference/figures/pi.svg' alt='Pattern Institute logo' height=24>

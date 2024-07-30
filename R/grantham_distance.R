@@ -58,7 +58,6 @@
 #'   values that can be used with this formula. This data set is from Table 1,
 #'   Science (1974). 185(4154): 862--4 by R. Grantham.
 #'
-#' @md
 #' @export
 grantham_equation <-
   function(c_i,
@@ -71,11 +70,10 @@ grantham_equation <-
            beta = 0.1018,
            gamma = 0.000399,
            rho = 50.723) {
-
     d_ij <- rho *
-      (alpha * (c_i - c_j) ^ 2 +
-         beta * (p_i - p_j) ^ 2 +
-         gamma * (v_i - v_j) ^ 2) ^ 0.5
+      (alpha * (c_i - c_j)^2 +
+        beta * (p_i - p_j)^2 +
+        gamma * (v_i - v_j)^2)^0.5
 
     return(d_ij)
   }
@@ -126,21 +124,19 @@ grantham_equation <-
 #' @return A [tibble][tibble::tibble-package] of Grantham's distances for each
 #'   amino acid pair.
 #'
-#' @md
-#'
 #' @source \doi{10.1126/science.185.4154.862}.
 #'
 #' @examples
 #' # Grantham's distance between Serine (Ser) and Glutamate (Glu)
-#' grantham_distance('Ser', 'Glu')
+#' grantham_distance("Ser", "Glu")
 #'
 #' # Grantham's distance between Serine (Ser) and Glutamate (Glu)
 #' # with the "exact" method
-#' grantham_distance('Ser', 'Glu', method = 'exact')
+#' grantham_distance("Ser", "Glu", method = "exact")
 #'
 #' # `grantham_distance()` is vectorised
 #' # amino acids are paired element-wise between `x` and `y`
-#' grantham_distance(x = c('Pro', 'Gly'), y = c('Glu', 'Arg'))
+#' grantham_distance(x = c("Pro", "Gly"), y = c("Glu", "Arg"))
 #'
 #' # Use `amino_acid_pairs()` to generate pairs (by default generates all pairs)
 #' aa_pairs <- amino_acid_pairs()
@@ -150,39 +146,43 @@ grantham_equation <-
 grantham_distance <-
   function(x,
            y,
-           method = c('original', 'exact'),
+           method = c("original", "exact"),
            alpha = 1.833,
            beta = 0.1018,
            gamma = 0.000399,
            rho = 50.723) {
+    if (!all_amino_acids(x)) {
+      stop("`x` should contain only amino acid three-letter codes.")
+    }
 
-  if(!all_amino_acids(x))
-    stop('`x` should contain only amino acid three-letter codes.')
+    if (!all_amino_acids(y)) {
+      stop("`y` should contain only amino acid three-letter codes.")
+    }
 
-  if(!all_amino_acids(y))
-    stop('`y` should contain only amino acid three-letter codes.')
+    # `rec`: recycled vectors `x` and `y`:
+    rec <- vctrs::vec_recycle_common(x = x, y = y)
 
-  # `rec`: recycled vectors `x` and `y`:
-  rec <- vctrs::vec_recycle_common(x = x, y = y)
+    # Check that `method` is either 'original' or 'exact'.
+    method <- match.arg(method)
 
-  # Check that `method` is either 'original' or 'exact'.
-  method <- match.arg(method)
-
-  if(identical(method, 'original'))
-    return(grantham_distance_original(x = rec$x,
-                                      y = rec$y))
-  else
-    return(
-      grantham_distance_exact(
+    if (identical(method, "original")) {
+      return(grantham_distance_original(
         x = rec$x,
-        y = rec$y,
-        alpha = alpha,
-        beta = beta,
-        gamma = gamma,
-        rho = rho
+        y = rec$y
+      ))
+    } else {
+      return(
+        grantham_distance_exact(
+          x = rec$x,
+          y = rec$y,
+          alpha = alpha,
+          beta = beta,
+          gamma = gamma,
+          rho = rho
+        )
       )
-    )
-}
+    }
+  }
 
 #' Grantham's distance (original)
 #'
@@ -196,12 +196,10 @@ grantham_distance <-
 #' @return A [tibble][tibble::tibble-package] of Grantham's distances for each
 #'   amino acid pair.
 #'
-#' @md
 #' @source \doi{10.1126/science.185.4154.862}.
 #' @keywords internal
 #' @export
 grantham_distance_original <- function(x, y) {
-
   amino_acid_pairs <- matrix(c(aa_idx(x), aa_idx(y)), ncol = 2)
   tbl <- tibble::tibble(x = x, y = y, d = grantham_distances_matrix[amino_acid_pairs])
 
@@ -209,8 +207,6 @@ grantham_distance_original <- function(x, y) {
 }
 
 #' Grantham's distance (exact)
-#'
-#' @md
 #'
 #' @description
 #' This function calculates the Grantham's distance for pairs of amino acids. It
@@ -246,7 +242,7 @@ grantham_distance_original <- function(x, y) {
 #' @seealso [grantham_equation()]
 #'
 #' @examples
-#' grantham_distance_exact(c('Ser', 'Ser'), c('Pro', 'Trp'))
+#' grantham_distance_exact(c("Ser", "Ser"), c("Pro", "Trp"))
 #'
 #' @keywords internal
 #' @export
@@ -256,24 +252,24 @@ grantham_distance_exact <- function(x,
                                     beta = 0.1018,
                                     gamma = 0.000399,
                                     rho = 50.723) {
-
   # Filter the properties table for the queried amino acids
   x_tbl <- amino_acids_properties[aa_idx(x), ]
   y_tbl <- amino_acids_properties[aa_idx(y), ]
 
   # Grantham's distance computed from the amino acids' properties as provided in
   # Table 1 of Grantham (1974).
-  d <- grantham_equation(c_i = x_tbl$c,
-                    c_j = y_tbl$c,
-                    p_i = x_tbl$p,
-                    p_j = y_tbl$p,
-                    v_i = x_tbl$v,
-                    v_j = y_tbl$v,
-                    alpha = alpha,
-                    beta = beta,
-                    gamma = gamma,
-                    rho = rho
-                    )
+  d <- grantham_equation(
+    c_i = x_tbl$c,
+    c_j = y_tbl$c,
+    p_i = x_tbl$p,
+    p_j = y_tbl$p,
+    v_i = x_tbl$v,
+    v_j = y_tbl$v,
+    alpha = alpha,
+    beta = beta,
+    gamma = gamma,
+    rho = rho
+  )
 
   tbl <- tibble::tibble(x = x, y = y, d = d)
 

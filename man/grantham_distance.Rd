@@ -71,15 +71,15 @@ amino acid properties explicitly, then use \code{\link[=grantham_equation]{grant
 }
 \examples{
 # Grantham's distance between Serine (Ser) and Glutamate (Glu)
-grantham_distance('Ser', 'Glu')
+grantham_distance("Ser", "Glu")
 
 # Grantham's distance between Serine (Ser) and Glutamate (Glu)
 # with the "exact" method
-grantham_distance('Ser', 'Glu', method = 'exact')
+grantham_distance("Ser", "Glu", method = "exact")
 
 # `grantham_distance()` is vectorised
 # amino acids are paired element-wise between `x` and `y`
-grantham_distance(x = c('Pro', 'Gly'), y = c('Glu', 'Arg'))
+grantham_distance(x = c("Pro", "Gly"), y = c("Glu", "Arg"))
 
 # Use `amino_acid_pairs()` to generate pairs (by default generates all pairs)
 aa_pairs <- amino_acid_pairs()
