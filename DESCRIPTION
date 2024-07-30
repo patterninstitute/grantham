@@ -37,8 +37,7 @@ Imports:
     vctrs,
     dplyr,
     tidyr,
-    rlang,
-    stringr
+    rlang
 URL: https://www.pattern.institute/grantham/, https://github.com/patterninstitute/grantham
 BugReports: https://github.com/patterninstitute/grantham/issues
 Suggests: 

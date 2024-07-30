@@ -38,5 +38,5 @@
 as_one_letter <- function(x) {
 
   three_to_one_letter_codes <- stats::setNames(one_letter_codes, nm = three_letter_codes)
-  unname(three_to_one_letter_codes[stringr::str_to_title(x)])
+  unname(three_to_one_letter_codes[tools::toTitleCase(x)])
 }
