@@ -1,3 +1,9 @@
+# grantham 0.1.2
+
+* Moved project official hosting from <https://github.com/maialab/grantham> to <https://github.com/patterninstitute/grantham>.
+* Increased test coverage.
+* Removed frivolous dependencies.
+
 # grantham 0.1.1
 
 * Added two new functions: `as_one_letter()` and `as_three_letter()`.
