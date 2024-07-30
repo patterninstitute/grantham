@@ -4,9 +4,9 @@
 \name{grantham-package}
 \alias{grantham}
 \alias{grantham-package}
-\title{grantham: Calculate the 'Grantham' Distance}
+\title{grantham: Calculate the Grantham Distance}
 \description{
-A minimal set of routines to calculate the 'Grantham' distance <doi:10.1126/science.185.4154.862>. The 'Grantham' distance attempts to provide a proxy for the evolutionary distance between two amino acids based on three key chemical properties: composition, polarity and molecular volume. In turn, evolutionary distance is used as a proxy for the impact of missense mutations. The higher the distance, the more deleterious the substitution is expected to be.
+A minimal set of routines to calculate the Grantham distance \doi{10.1126/science.185.4154.862}. The Grantham distance attempts to provide a proxy for the evolutionary distance between two amino acids based on three key chemical properties: composition, polarity and molecular volume. In turn, evolutionary distance is used as a proxy for the impact of missense mutations. The higher the distance, the more deleterious the substitution is expected to be.
 }
 \seealso{
 Useful links:
@@ -18,17 +18,19 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Ramiro Magno \email{ramiro.magno@gmail.com} (\href{https://orcid.org/0000-0001-5226-3441}{ORCID})
+\strong{Maintainer}: Ramiro Magno \email{rmagno@pattern.institute} (\href{https://orcid.org/0000-0001-5226-3441}{ORCID})
 
 Authors:
 \itemize{
-  \item Isabel Duarte \email{iduarte.scientist@gmail.com} (\href{https://orcid.org/0000-0003-0060-2936}{ORCID})
+  \item Isabel Duarte \email{iduarte@pattern.institute} (\href{https://orcid.org/0000-0003-0060-2936}{ORCID})
   \item Ana-Teresa Maia \email{maia.anateresa@gmail.com} (\href{https://orcid.org/0000-0002-0454-9207}{ORCID})
 }
 
 Other contributors:
 \itemize{
-  \item CINTESIS [copyright holder, funder]
+  \item University of Algarve [funder]
+  \item CINTESIS [funder]
+  \item Pattern Institute [copyright holder, funder]
 }
 
 }
