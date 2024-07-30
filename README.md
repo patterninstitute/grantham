@@ -11,7 +11,8 @@ status](https://www.r-pkg.org/badges/version/grantham)](https://CRAN.R-project.o
 <!-- badges: end -->
 
 The goal of `{grantham}` is to provide a minimal set of routines to
-calculate the Grantham distance (Grantham (1974)).
+calculate the Grantham distance ([Grantham
+(1974)](https://doi.org/10.1126/science.185.4154.862)).
 
 The Grantham distance attempts to provide a proxy for the evolutionary
 distance between two amino acids based on three key side chain chemical
