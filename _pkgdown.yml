@@ -1,6 +1,7 @@
 url: https://www.pattern.institute/grantham
 
 template:
+  package: chic
   bootstrap: 5
 
 authors:

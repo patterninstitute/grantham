@@ -42,5 +42,6 @@ Suggests:
     spelling,
     testthat (>= 3.0.0)
 Language: en-US
+Config/Needs/website: patterninstitute/chic
 Config/testthat/edition: 3
 Roxygen: list(markdown = TRUE)
