@@ -7,6 +7,7 @@
 
 [![CRAN
 status](https://www.r-pkg.org/badges/version/grantham)](https://CRAN.R-project.org/package=grantham)
+[![R-CMD-check](https://github.com/patterninstitute/grantham/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/patterninstitute/grantham/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 The goal of `{grantham}` is to provide a minimal set of routines to
