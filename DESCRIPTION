@@ -34,7 +34,6 @@ Depends:
     R (>= 2.10)
 Imports: 
     tibble,
-    magrittr,
     vctrs,
     dplyr,
     tidyr,

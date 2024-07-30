@@ -48,11 +48,11 @@ amino_acid_pairs <-
     if (keep_reverses) {
       tbl # do nothing
     } else {
-      tbl %>%
-        dplyr::rowwise() %>%
-        dplyr::mutate(key = paste(sort(c(x, y)), collapse = '-')) %>%
-        dplyr::ungroup() %>%
-        dplyr::distinct(.data$key, .keep_all = TRUE) %>%
+      tbl |>
+        dplyr::rowwise() |>
+        dplyr::mutate(key = paste(sort(c(x, y)), collapse = '-')) |>
+        dplyr::ungroup() |>
+        dplyr::distinct(.data$key, .keep_all = TRUE) |>
         dplyr::select(-'key')
     }
 

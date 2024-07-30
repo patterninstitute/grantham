@@ -8,9 +8,10 @@ grantham_distances_matrix <-
     file = here::here('data-raw', 'grantham_distance_matrix.csv'),
     col_types = 'ciiiiiiiiiiiiiiiiiii',
     col_select = -1
-  ) %>%
-  as.matrix() %>%
-  `rownames<-`(., colnames(.))
+  ) |>
+  as.matrix()
+
+rownames(grantham_distances_matrix) <- colnames(grantham_distances_matrix)
 
 # Sort the rows and columns by the order present in `amino_acids()`. This
 # ordering should already be as in the return value of `amino_acids()`, but just
@@ -24,8 +25,8 @@ amino_acids_properties <-
   readr::read_csv(
     file = here::here('data-raw', 'amino_acids_properties.csv'),
     col_types = 'cdd'
-  ) %>% # Next line is just ensure that the order comes out the same as in `amino_acids()`.
-  dplyr::left_join(tibble::tibble(amino_acid = amino_acids()), ., by = 'amino_acid')
+  ) |> # Next line is just ensure that the order comes out the same as in `amino_acids()`.
+  dplyr::left_join(x = tibble::tibble(amino_acid = amino_acids()), y = _, by = 'amino_acid')
 
 # The 20 amino acids.
 n_amino_acids <- length(amino_acids())
@@ -37,8 +38,8 @@ mean_chemical_distance <-
          'p' = mean(outer(p, p, function(x, y) abs(x - y))[grantham:::sltm_k(n_amino_acids)]),
          'v' = mean(outer(v, v, function(x, y) abs(x - y))[grantham:::sltm_k(n_amino_acids)])
        )
-  ) %>%
-  signif(digits = 4) %>%
+  ) |>
+  signif(digits = 4) |>
   round(digits = 3)
 
 # The mean weighting factors (as they are referred to in the caption of Table 1
