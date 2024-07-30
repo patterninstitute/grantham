@@ -24,7 +24,7 @@
 #' # Generate specific combinations of Ser against Ala and Trp.
 #' amino_acid_pairs(x = 'Ser', y = c('Ala', 'Trp'))
 #' @md
-#' @importFrom rlang .data
+#' @importFrom dplyr .data
 #' @export
 amino_acid_pairs <-
   function(x = amino_acids(),

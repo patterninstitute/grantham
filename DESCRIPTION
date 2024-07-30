@@ -35,8 +35,7 @@ Depends:
 Imports: 
     tibble,
     vctrs,
-    dplyr,
-    rlang
+    dplyr
 URL: https://www.pattern.institute/grantham/, https://github.com/patterninstitute/grantham
 BugReports: https://github.com/patterninstitute/grantham/issues
 Suggests: 
