@@ -40,7 +40,16 @@ amino_acid_pairs <-
       stop('`y` must be a vector of three-letter code amino acids'
       )
 
-  tbl <- tidyr::expand_grid(x = x, y = y)
+  # tbl <- tidyr::expand_grid(x = x, y = y)
+    tbl <- expand.grid(
+      y = y,
+      x = x,
+      KEEP.OUT.ATTRS = FALSE,
+      stringsAsFactors = FALSE
+    ) |>
+      tibble::as_tibble() |>
+      dplyr::relocate("x", "y")
+
   tbl <- `if`(keep_self, tbl, dplyr::filter(tbl, x != y))
   tbl <- `if`(keep_duplicates, tbl, dplyr::distinct(tbl))
 
