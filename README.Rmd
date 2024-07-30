@@ -20,7 +20,7 @@ knitr::opts_chunk$set(
 <!-- badges: end -->
 
 The goal of `{grantham}` is to provide a minimal set of routines to calculate
-the Grantham distance<sup>[1](#1)</sup>.
+the Grantham distance (Grantham (1974)).
 
 The Grantham distance attempts to provide a proxy for the evolutionary distance
 between two amino acids based on three key side chain chemical properties:
@@ -34,13 +34,6 @@ Install `{grantham}` from CRAN:
 
 ``` r
 install.packages("grantham")
-```
-
-You can install the development version of `{grantham}` like so:
-
-``` r
-# install.packages("remotes")
-remotes::install_github("maialab/grantham")
 ```
 
 ## Usage
