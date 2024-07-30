@@ -43,6 +43,8 @@ Imports:
 URL: https://www.pattern.institute/grantham/, https://github.com/patterninstitute/grantham
 BugReports: https://github.com/patterninstitute/grantham/issues
 Suggests: 
-    spelling
+    spelling,
+    testthat (>= 3.0.0)
 Language: en-US
 Config/Needs/website: patterninstitute/chic
+Config/testthat/edition: 3
