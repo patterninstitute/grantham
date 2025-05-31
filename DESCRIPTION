@@ -1,7 +1,7 @@
 Package: grantham
 Type: Package
 Title: Calculate the Grantham Distance
-Version: 0.1.2
+Version: 0.1.3
 Authors@R: c(
     person(given = "Ramiro", family = "Magno",
       email = "rmagno@pattern.institute",
@@ -34,7 +34,6 @@ Depends:
     R (>= 2.10)
 Imports: 
     tibble,
-    vctrs,
     dplyr
 URL: https://www.pattern.institute/grantham/, https://github.com/patterninstitute/grantham
 BugReports: https://github.com/patterninstitute/grantham/issues

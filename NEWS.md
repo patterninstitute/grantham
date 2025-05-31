@@ -1,3 +1,7 @@
+# grantham 0.1.3
+
+* Removed dependency on [vctrs](https://vctrs.r-lib.org/).
+
 # grantham 0.1.2
 
 * Moved project official hosting from <https://github.com/maialab/grantham> to <https://github.com/patterninstitute/grantham>.

@@ -160,7 +160,7 @@ grantham_distance <-
     }
 
     # `rec`: recycled vectors `x` and `y`:
-    rec <- vctrs::vec_recycle_common(x = x, y = y)
+    rec <- vec_recycle_common(x = x, y = y)
 
     # Check that `method` is either 'original' or 'exact'.
     method <- match.arg(method)
