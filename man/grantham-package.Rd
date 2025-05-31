@@ -30,7 +30,7 @@ Other contributors:
 \itemize{
   \item University of Algarve [funder]
   \item CINTESIS [funder]
-  \item Pattern Institute [copyright holder, funder]
+  \item Pattern Institute (04jrgd746) [copyright holder, funder]
 }
 
 }

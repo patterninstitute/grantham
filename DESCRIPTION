@@ -17,7 +17,7 @@ Authors@R: c(
       comment = c(ORCID = "0000-0002-0454-9207")),
     person("University of Algarve", role = "fnd"),
     person("CINTESIS", role = "fnd"),
-    person("Pattern Institute", role = c("cph", "fnd"))
+    person("Pattern Institute", role = c("cph", "fnd"), comment = c(ROR = "04jrgd746"))
     )
 Description: A minimal set of routines to calculate the Grantham distance
     <doi:10.1126/science.185.4154.862>. The Grantham distance attempts to
