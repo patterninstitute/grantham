@@ -140,9 +140,6 @@ aa_pairs
 #>  9 Ser   Phe  
 #> 10 Ser   Tyr  
 #> # ℹ 180 more rows
-```
-
-``` r
 
 # Grantham distance for the 190 unique amino acid pairs
 grantham_distance(x = aa_pairs$x, y = aa_pairs$y)
