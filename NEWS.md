@@ -1,3 +1,7 @@
+# grantham 0.1.4
+
+* Added dependency on R (>= 4.1.0).
+
 # grantham 0.1.3
 
 * Removed dependency on [vctrs](https://vctrs.r-lib.org/).
